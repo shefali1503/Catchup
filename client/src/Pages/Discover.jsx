@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { dummyConnectionsData } from '../assets/assets'
 import { Search } from 'lucide-react'
+import UserCard from '../Components/UserCard'
+import Loading from '../Components/Loading'
 
 const Discover = () => {
 
@@ -37,6 +39,16 @@ const Discover = () => {
             </div>
           </div>
         </div>
+
+          <div className='flex flex-wrap gap-6'>
+            {users.map((user)=>(
+              <UserCard user={user} key={user._id} />
+            ))}
+          </div>
+
+          {
+            loading && (<Loading height='60vh' />)
+          }
 
       </div>
 
