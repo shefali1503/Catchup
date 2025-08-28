@@ -3,6 +3,7 @@ import { dummyStoriesData } from '../assets/assets'
 import { Plus } from 'lucide-react'
 import moment from 'moment'
 import StoryModal from './StoryModal'
+import StoryViewer from './StoryViewer'
 
 const StoriesBar = () => {
 
@@ -38,7 +39,7 @@ const StoriesBar = () => {
                 {/* Story Cards */}
                 {
                     stories.map((story, index) => {
-                        return (<div key={index} className={`relative rounded-lg shadow min-w-30 max-w-30 max-h-40 cursor-pointer hover:shadow-lg transition-all duration-200 bg-gradient-to-b from-indigo-500 to-purple-600 hover:from-indigo-700 hover:to-purple-800 active:scale-95`} >
+                        return (<div onClick={()=> setViewStory(story) } key={index} className={`relative rounded-lg shadow min-w-30 max-w-30 max-h-40 cursor-pointer hover:shadow-lg transition-all duration-200 bg-gradient-to-b from-indigo-500 to-purple-600 hover:from-indigo-700 hover:to-purple-800 active:scale-95`} >
 
                             <img src={story.user.profile_picture} alt="" className='absolute size-8 top-3 left-3 z-10 rounded-full ring ring-gray-100 shadow' />
 
@@ -69,6 +70,9 @@ const StoriesBar = () => {
                 {
                     showModal && <StoryModal setShowModal={setShowModal} fetchStories={fetchStories} />
                 }
+                {/* View Story Modal */}
+                {viewStory && <StoryViewer viewStory={viewStory} setViewStory={setViewStory}/>}
+                
 
         </div>
     )
