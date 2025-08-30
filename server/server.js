@@ -14,7 +14,6 @@ await connectDB();
 app.use(express.json());
 app.use(cors());
 
-
 // Health check
 app.get("/", (req, res) => {
   res.send("Server is running ✅");
