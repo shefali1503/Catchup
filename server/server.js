@@ -5,13 +5,15 @@ import connectDB from "./configs/db.js";
 import { inngest, functions } from "./inngest/index.js";
 import { serve } from "inngest/express";
 
-// Connect DB once
-await connectDB();
 
 const app = express();
 
-app.use(cors());
+// Connect DB once
+await connectDB();
+
 app.use(express.json());
+app.use(cors());
+
 
 // Health check
 app.get("/", (req, res) => {
