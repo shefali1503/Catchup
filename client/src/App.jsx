@@ -26,6 +26,9 @@ const App = () => {
   const pathnameRef = useRef(pathname)
   const dispatch = useDispatch()
 
+  console.log("Clerk Key:", import.meta.env.VITE_CLERK_PUBLISHABLE_KEY)
+  console.log("Base URL:", import.meta.env.VITE_BASEURL)
+
   useEffect(() => {
     const fetchData = async () => {
       if (user) {
