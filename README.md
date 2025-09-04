@@ -18,7 +18,6 @@ Profile management powered by Clerk
 ⚙️ Background Jobs
 Handle scheduled jobs & tasks efficiently with Inngest
 
-
 🖼️ Media Storage & Optimization
 Upload, store, and optimize images with ImageKit
 Ensures fast load times & high-quality delivery
